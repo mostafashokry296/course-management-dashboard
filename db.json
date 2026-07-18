@@ -1,0 +1,147 @@
+{
+  "courses": [
+    {
+      "id": 1,
+      "courseName": "Angular Fundamentals",
+      "instructorName": "Ahmed Ali",
+      "category": "Frontend",
+      "duration": 20,
+      "price": 1500,
+      "status": "Active",
+      "createdDate": "2026-06-01",
+      "description": "أساسيات Angular من الصفر لبناء تطبيقات SPA احترافية."
+    },
+    {
+      "id": 3,
+      "courseName": "React for Beginners",
+      "instructorName": "Mohamed Nabil",
+      "category": "Frontend",
+      "duration": 25,
+      "price": 1800,
+      "status": "Draft",
+      "createdDate": "2026-06-10",
+      "description": "مقدمة شاملة لمكتبة React وبناء الـ Components."
+    },
+    {
+      "id": 4,
+      "courseName": "Node.js Backend Development",
+      "instructorName": "Youssef Hany",
+      "category": "Backend",
+      "duration": 30,
+      "price": 2200,
+      "status": "Active",
+      "createdDate": "2026-04-15",
+      "description": "بناء REST APIs باستخدام Node.js وExpress."
+    },
+    {
+      "id": 5,
+      "courseName": "Database Design with SQL",
+      "instructorName": "Nourhan Adel",
+      "category": "Database",
+      "duration": 18,
+      "price": 1400,
+      "status": "Active",
+      "createdDate": "2026-03-05",
+      "description": "تصميم قواعد البيانات العلائقية وكتابة استعلامات SQL."
+    },
+    {
+      "id": 6,
+      "courseName": "MongoDB Essentials",
+      "instructorName": "Karim Fathy",
+      "category": "Database",
+      "duration": 12,
+      "price": 900,
+      "status": "Archived",
+      "createdDate": "2025-11-20",
+      "description": "أساسيات قواعد البيانات اللا علائقية باستخدام MongoDB."
+    },
+    {
+      "id": 7,
+      "courseName": "UI/UX Design Principles",
+      "instructorName": "Mariam Adham",
+      "category": "Design",
+      "duration": 22,
+      "price": 1600,
+      "status": "Active",
+      "createdDate": "2026-06-15",
+      "description": "مبادئ تصميم تجربة وواجهة المستخدم للتطبيقات الحديثة."
+    },
+    {
+      "id": 8,
+      "courseName": "DevOps with Docker & CI/CD",
+      "instructorName": "Omar Khaled",
+      "category": "DevOps",
+      "duration": 28,
+      "price": 2500,
+      "status": "Draft",
+      "createdDate": "2026-06-18",
+      "description": "بناء pipelines للنشر الآلي باستخدام Docker وGitHub Actions."
+    },
+    {
+      "id": 9,
+      "courseName": "Python for Data Science",
+      "instructorName": "Heba Ibrahim",
+      "category": "Data Science",
+      "duration": 35,
+      "price": 2800,
+      "status": "Active",
+      "createdDate": "2026-02-10",
+      "description": "تحليل البيانات باستخدام Python ومكتبات Pandas وNumPy."
+    },
+    {
+      "id": 10,
+      "courseName": "Machine Learning Basics",
+      "instructorName": "Ziad Sameh",
+      "category": "Data Science",
+      "duration": 40,
+      "price": 3200,
+      "status": "Archived",
+      "createdDate": "2025-09-01",
+      "description": "مقدمة في خوارزميات تعلم الآلة الأساسية."
+    },
+    {
+      "id": 11,
+      "courseName": "Angular Testing with Jasmine & Karma",
+      "instructorName": "Dina Wael",
+      "category": "Frontend",
+      "duration": 14,
+      "price": 1100,
+      "status": "Active",
+      "createdDate": "2026-06-20",
+      "description": "كتابة Unit Tests للـ Components والـ Services في Angular."
+    },
+    {
+      "courseName": "REST API Security",
+      "instructorName": "Hassan Ahmed",
+      "category": "Backend",
+      "duration": 16,
+      "price": 1700,
+      "status": "Draft",
+      "description": "حماية الـ APIs باستخدام JWT وOAuth2.",
+      "createdDate": "2026-06-22",
+      "id": 12
+    },
+    {
+      "id": 13,
+      "courseName": "Git & Version Control Mastery",
+      "instructorName": "Aya Tarek",
+      "category": "Tools",
+      "duration": 8,
+      "price": 500,
+      "status": "Active",
+      "createdDate": "2026-01-12",
+      "description": "احتراف Git وGitHub في بيئة العمل الجماعي."
+    },
+    {
+      "id": 14,
+      "courseName": "Cloud Fundamentals with AWS",
+      "instructorName": "Tamer Fouad",
+      "category": "DevOps",
+      "duration": 24,
+      "price": 2000,
+      "status": "Active",
+      "createdDate": "2026-05-05",
+      "description": "أساسيات الحوسبة السحابية وخدمات AWS الرئيسية."
+    }
+  ]
+}

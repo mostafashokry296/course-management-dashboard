@@ -1,0 +1,95 @@
+@if (loading()) {
+  <div class="loading-state">
+    <mat-spinner diameter="44"></mat-spinner>
+  </div>
+} @else if (errorMessage()) {
+  <mat-card class="error-card" appearance="outlined">
+    <mat-card-content class="error-content">
+      <mat-icon class="error-icon">error</mat-icon>
+      <p>{{ errorMessage() }}</p>
+      <button mat-flat-button color="primary" type="button" (click)="goBack()">
+        <mat-icon>arrow_back</mat-icon>
+        {{ 'courseDetails.back' | translate }}
+      </button>
+    </mat-card-content>
+  </mat-card>
+} @else if (course(); as currentCourse) {
+  <div class="details-page">
+    <button mat-stroked-button type="button" class="back-btn" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      {{ 'courseDetails.back' | translate }}
+    </button>
+
+    <mat-card class="details-card" appearance="outlined">
+      <mat-card-header>
+        <div class="details-header">
+          <mat-card-title>{{ currentCourse.courseName }}</mat-card-title>
+          <span class="status-chip" [class]="getStatusChipClass(currentCourse.status)">
+            {{ 'courseStatus.' + currentCourse.status | translate }}
+          </span>
+        </div>
+      </mat-card-header>
+
+      <mat-divider></mat-divider>
+
+      <mat-card-content>
+        <div class="details-grid">
+          <div class="detail-item">
+            <div class="detail-label">
+              <mat-icon>person</mat-icon>
+              {{ 'courseDetails.instructor' | translate }}
+            </div>
+            <div class="detail-value">{{ currentCourse.instructorName }}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-label">
+              <mat-icon>category</mat-icon>
+              {{ 'courseDetails.category' | translate }}
+            </div>
+            <div class="detail-value">{{ currentCourse.category }}</div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-label">
+              <mat-icon>schedule</mat-icon>
+              {{ 'courseDetails.duration' | translate }}
+            </div>
+            <div class="detail-value">
+              {{ currentCourse.duration }} {{ 'courseDetails.hours' | translate }}
+            </div>
+          </div>
+
+          <div class="detail-item">
+            <div class="detail-label">
+              <mat-icon>sell</mat-icon>
+              {{ 'courseDetails.price' | translate }}
+            </div>
+            <div class="detail-value">
+              {{ currentCourse.price }} {{ 'courseDetails.currency' | translate }}
+            </div>
+          </div>
+
+          <div class="detail-item full-width">
+            <div class="detail-label">
+              <mat-icon>event</mat-icon>
+              {{ 'courseDetails.createdDate' | translate }}
+            </div>
+            <div class="detail-value">{{ currentCourse.createdDate }}</div>
+          </div>
+        </div>
+
+        @if (currentCourse.description) {
+          <mat-divider class="section-divider"></mat-divider>
+          <div class="detail-item">
+            <div class="detail-label">
+              <mat-icon>notes</mat-icon>
+              {{ 'courseDetails.description' | translate }}
+            </div>
+            <div class="detail-value description">{{ currentCourse.description }}</div>
+          </div>
+        }
+      </mat-card-content>
+    </mat-card>
+  </div>
+}

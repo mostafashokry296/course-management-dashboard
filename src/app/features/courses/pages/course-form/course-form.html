@@ -1,0 +1,118 @@
+<div class="form-page">
+  <div class="form-header">
+    <button mat-icon-button type="button" (click)="onCancel()" aria-label="Back">
+      <mat-icon>arrow_back</mat-icon>
+    </button>
+    <h2>
+      {{ (isEditMode() ? 'courseForm.editTitle' : 'courseForm.addTitle') | translate }}
+    </h2>
+  </div>
+
+  @if (loading()) {
+    <div class="loading-state">
+      <mat-spinner diameter="40"></mat-spinner>
+      <p>{{ 'courseForm.loadingData' | translate }}</p>
+    </div>
+  }
+
+  @if (!loading()) {
+    <mat-card class="form-card" appearance="outlined">
+      <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="onSubmit()" class="course-form">
+          <div class="form-grid">
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>{{ 'courseForm.courseName' | translate }}</mat-label>
+              <input matInput formControlName="courseName" />
+              @if (f['courseName'].hasError('required')) {
+                <mat-error>{{ 'courseForm.courseNameRequired' | translate }}</mat-error>
+              } @else if (f['courseName'].hasError('minlength')) {
+                <mat-error>{{ 'courseForm.courseNameMinLength' | translate }}</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'courseForm.instructorName' | translate }}</mat-label>
+              <input matInput formControlName="instructorName" />
+              @if (f['instructorName'].hasError('required')) {
+                <mat-error>{{ 'courseForm.instructorNameRequired' | translate }}</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'courseForm.category' | translate }}</mat-label>
+              <input
+                matInput
+                formControlName="category"
+                [placeholder]="'courseForm.categoryPlaceholder' | translate"
+              />
+              @if (f['category'].hasError('required')) {
+                <mat-error>{{ 'courseForm.categoryRequired' | translate }}</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'courseForm.duration' | translate }}</mat-label>
+              <input matInput type="number" formControlName="duration" />
+              @if (f['duration'].hasError('required')) {
+                <mat-error>{{ 'courseForm.durationRequired' | translate }}</mat-error>
+              } @else if (f['duration'].hasError('min')) {
+                <mat-error>{{ 'courseForm.durationMin' | translate }}</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'courseForm.price' | translate }}</mat-label>
+              <input matInput type="number" formControlName="price" />
+              @if (f['price'].hasError('required')) {
+                <mat-error>{{ 'courseForm.priceRequired' | translate }}</mat-error>
+              } @else if (f['price'].hasError('min')) {
+                <mat-error>{{ 'courseForm.priceMin' | translate }}</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline">
+              <mat-label>{{ 'courseForm.status' | translate }}</mat-label>
+              <mat-select formControlName="status">
+                @for (status of statusOptions; track status) {
+                  <mat-option [value]="status">
+                    {{ 'courseStatus.' + status | translate }}
+                  </mat-option>
+                }
+              </mat-select>
+              @if (f['status'].hasError('required')) {
+                <mat-error>{{ 'courseForm.statusRequired' | translate }}</mat-error>
+              }
+            </mat-form-field>
+
+            <mat-form-field appearance="outline" class="full-width">
+              <mat-label>{{ 'courseForm.description' | translate }}</mat-label>
+              <textarea
+                matInput
+                formControlName="description"
+                rows="4"
+                maxlength="500"
+              ></textarea>
+              @if (f['description'].hasError('maxlength')) {
+                <mat-error>{{ 'courseForm.descriptionMaxLength' | translate }}</mat-error>
+              }
+            </mat-form-field>
+          </div>
+
+          <div class="form-actions">
+            <button mat-stroked-button type="button" (click)="onCancel()">
+              {{ 'common.cancel' | translate }}
+            </button>
+            <button mat-flat-button color="primary" type="submit" [disabled]="submitting()">
+              @if (submitting()) {
+                <mat-spinner diameter="18" class="btn-spinner"></mat-spinner>
+              } @else {
+                <mat-icon>check</mat-icon>
+              }
+              {{ (isEditMode() ? 'courseForm.updateCourse' : 'courseForm.addCourseBtn') | translate }}
+            </button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  }
+</div>

@@ -1,1 +1,144 @@
-/* You can add global styles to this file, and also import other style files */
+// Include theming for Angular Material with `mat.theme()`.
+@use '@angular/material' as mat;
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme='dark'], [data-theme='dark'] *));
+
+:root,
+html[data-theme='light'] {
+  --app-bg: #f5f7fb;
+  --app-surface: #ffffff;
+  --app-surface-muted: #f8fafc;
+  --app-text: #334155;
+  --app-text-strong: #1e293b;
+  --app-text-muted: #64748b;
+  --app-border: #e2e8f0;
+  --app-border-strong: #cbd5e1;
+  --app-hover: #f1f5f9;
+  --app-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+  --app-header-bg: #ffffff;
+  --app-input-bg: #ffffff;
+  --app-skeleton: #e2e8f0;
+  --app-skeleton-soft: #f1f5f9;
+  --app-primary: #2563eb;
+  --app-primary-hover: #1d4ed8;
+}
+
+html[data-theme='dark'] {
+  /* Softer charcoal palette — easier on the eyes than pure navy/black */
+  --app-bg: #1a1d23;
+  --app-surface: #23272f;
+  --app-surface-muted: #2b303a;
+  --app-text: #c4c9d2;
+  --app-text-strong: #e6e8ec;
+  --app-text-muted: #9aa3b2;
+  --app-border: #343a46;
+  --app-border-strong: #3f4654;
+  --app-hover: #2f3540;
+  --app-shadow: 0 8px 24px rgba(0, 0, 0, 0.22);
+  --app-header-bg: #23272f;
+  --app-input-bg: #23272f;
+  --app-skeleton: #343a46;
+  --app-skeleton-soft: #2b303a;
+  --app-primary: #6ea8fe;
+  --app-primary-hover: #8bbcff;
+}
+
+html {
+  height: 100%;
+  @include mat.theme(
+    (
+      color: (
+        primary: mat.$azure-palette,
+        tertiary: mat.$blue-palette,
+      ),
+      typography: Roboto,
+      density: 0,
+    )
+  );
+}
+
+body {
+  background-color: var(--app-bg);
+  color: var(--app-text);
+  margin: 0;
+  min-height: 100%;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+.mat-mdc-card-title {
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--app-text-strong);
+}
+
+.mat-mdc-form-field,
+.mat-mdc-button-base,
+.mat-mdc-input-element,
+.mat-mdc-select,
+.mat-mdc-option {
+  font-family: Roboto, 'Helvetica Neue', sans-serif !important;
+}
+
+/* Softer Material outlined fields */
+.mat-mdc-form-field {
+  --mdc-outlined-text-field-container-shape: 12px;
+  --mdc-outlined-text-field-outline-color: var(--app-border-strong);
+  --mdc-outlined-text-field-hover-outline-color: var(--app-text-muted);
+  --mdc-outlined-text-field-focus-outline-color: var(--app-primary);
+  --mdc-outlined-text-field-label-text-color: var(--app-text-muted);
+  --mdc-outlined-text-field-input-text-color: var(--app-text-strong);
+  --mat-form-field-container-vertical-padding: 14px;
+}
+
+.mat-mdc-form-field .mdc-notched-outline .mdc-notched-outline__leading,
+.mat-mdc-form-field .mdc-notched-outline .mdc-notched-outline__notch,
+.mat-mdc-form-field .mdc-notched-outline .mdc-notched-outline__trailing {
+  border-width: 1px;
+}
+
+.mat-mdc-unelevated-button,
+.mat-mdc-filled-button {
+  --mdc-filled-button-container-shape: 10px;
+  --mdc-filled-button-label-text-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.mat-mdc-outlined-button {
+  --mdc-outlined-button-container-shape: 10px;
+  --mdc-outlined-button-outline-color: var(--app-primary);
+  --mdc-outlined-button-label-text-color: var(--app-primary);
+  --mdc-outlined-button-label-text-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.mat-mdc-card {
+  --mdc-elevated-card-container-shape: 16px;
+  --mdc-outlined-card-container-shape: 16px;
+  --mdc-outlined-card-outline-color: var(--app-border);
+  --mdc-elevated-card-container-color: var(--app-surface);
+  --mdc-outlined-card-container-color: var(--app-surface);
+}
+
+.mat-mdc-paginator {
+  background: var(--app-surface) !important;
+  color: var(--app-text) !important;
+  border-color: var(--app-border) !important;
+}
+
+html[data-theme='dark'] .mat-mdc-select-panel,
+html[data-theme='dark'] .mat-mdc-option {
+  --mat-option-label-text-color: var(--app-text-strong);
+}

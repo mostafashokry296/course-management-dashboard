@@ -1,0 +1,105 @@
+.form-page {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: 1.5rem 1rem 2.5rem;
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-bottom: 1.25rem;
+
+  h2 {
+    margin: 0;
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: var(--app-text-strong);
+    letter-spacing: 0.01em;
+  }
+}
+
+.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 3rem 1rem;
+  color: var(--app-text-muted);
+  font-weight: 500;
+}
+
+.form-card {
+  border-radius: 16px !important;
+  box-shadow: var(--app-shadow) !important;
+  background: var(--app-surface) !important;
+}
+
+.course-form {
+  padding-top: 0.75rem;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem 1rem;
+
+  @media (min-width: 640px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.full-width {
+  grid-column: 1 / -1;
+}
+
+:host ::ng-deep {
+  .mat-mdc-form-field {
+    width: 100%;
+  }
+
+  .mat-mdc-form-field-subscript-wrapper {
+    margin-bottom: 0.15rem;
+  }
+
+  .mdc-text-field--outlined {
+    --mdc-outlined-text-field-container-shape: 12px;
+  }
+
+  .mat-mdc-select-value-text,
+  .mat-mdc-input-element {
+    font-weight: 500;
+    color: var(--app-text-strong);
+  }
+
+  .mdc-floating-label {
+    font-weight: 500 !important;
+  }
+
+  .mat-mdc-icon-button {
+    color: var(--app-text);
+  }
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn-spinner {
+  display: inline-block;
+  margin-inline-end: 0.35rem;
+}
+
+button[mat-flat-button],
+button[mat-stroked-button] {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 42px;
+  padding-inline: 1.1rem;
+}

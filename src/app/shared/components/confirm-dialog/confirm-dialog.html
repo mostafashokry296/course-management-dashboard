@@ -1,0 +1,22 @@
+@if (open) {
+  <div class="dialog-backdrop" (click)="onCancel()">
+    <div
+      class="dialog-panel"
+      (click)="$event.stopPropagation()"
+      role="dialog"
+      aria-modal="true"
+    >
+      <h3>{{ titleKey | translate }}</h3>
+      <p>{{ messageKey | translate }}</p>
+
+      <div class="dialog-actions">
+        <button type="button" class="btn-cancel" (click)="onCancel()">
+          {{ cancelKey | translate }}
+        </button>
+        <button type="button" class="btn-confirm" (click)="onConfirm()">
+          {{ confirmKey | translate }}
+        </button>
+      </div>
+    </div>
+  </div>
+}
