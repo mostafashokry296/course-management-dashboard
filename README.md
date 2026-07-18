@@ -2,6 +2,17 @@
 
 A small Angular application for managing educational courses: list, search, filter, create, edit, delete, and view course details. The app supports English/Arabic (RTL) and Light/Dark mode.
 
+# Course Management Dashboard
+
+## Live Demo
+
+https://course-management-dashboard-nine.vercel.app/courses
+
+## GitHub Repository
+
+https://github.com/mostafashokry296/course-management-dashboard
+
+
 ## Technologies Used
 
 - Angular 21 (Standalone Components)
